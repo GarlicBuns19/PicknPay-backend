@@ -11,7 +11,7 @@ const port = process.env.PORT || 5001
 
 app.use(router, express.json(), express.urlencoded({
     extended: true
-}))
+}), express.static('index.html'))
 app.use(cors())
 
 // Home
