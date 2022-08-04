@@ -19,7 +19,6 @@ app.use(cors())
 // Home
 app.get('/',(req,res, next) => {
     res.sendFile('./index.html', {root : __dirname})
-    next(path.join(__dirname, 'index.html'));
 })
 
 // Register
