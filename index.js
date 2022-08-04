@@ -35,6 +35,7 @@ app.post('/reg', bodyParser.json(), (req, res) => {
             }
         }
     )
+    res.status(302).redirect('/');
 });
 // const router = require(express.router())
 // app.use('/api')
