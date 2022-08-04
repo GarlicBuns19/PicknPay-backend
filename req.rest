@@ -1,0 +1,11 @@
+
+POST http://localhost:5001/reg
+Content-Type: application/json
+
+{
+    "userFName": "Joel",
+    "userLName": "Muk",
+    "userEmail": "joel@gmail.com",
+    "userPassword": "lifechoices",
+    "userRole": "admin"
+}

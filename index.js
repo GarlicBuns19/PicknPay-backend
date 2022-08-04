@@ -5,18 +5,19 @@ const cors = require('cors')
 const bodyParser = require('body-parser')
 const jwt = require('jsonwebtoken')
 const bcrypt = require('bcrypt')
+const { json } = require('body-parser')
 const router = express.Router();
 // Set up port
 const port = process.env.PORT || 5001
 
 app.use(router, express.json(), express.urlencoded({
     extended: true
-}), express.static('index.html'))
+}))
 app.use(cors())
 
 // Home
 app.get('/',(req,res) => {
-    res.send('Lets go my g')
+    res.sendFile('./index.html', {root : __dirname})
 })
 
 // Register
@@ -29,7 +30,7 @@ app.post('/reg', bodyParser.json(), (req, res) => {
             if (err) {
                 console.log(err)
             } else {
-                res.send(`number rows affected ${results}`)
+                res.send(`number rows affected ${results.affectedRows}`)
             }
         }
     )
