@@ -4,6 +4,7 @@ const db = require('./config/dbmysql')
 const cors = require('cors')
 const bodyParser = require('body-parser')
 const jwt = require('jsonwebtoken')
+const path = require('path');
 const bcrypt = require('bcrypt')
 const { json } = require('body-parser')
 const router = express.Router();
@@ -16,8 +17,9 @@ app.use(router, express.json(), express.urlencoded({
 app.use(cors())
 
 // Home
-app.get('/',(req,res) => {
+app.get('/',(req,res, next) => {
     res.sendFile('./index.html', {root : __dirname})
+    next(path.join(__dirname, 'index.html'));
 })
 
 // Register
