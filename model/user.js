@@ -7,6 +7,11 @@ const bcrypt = require('bcrypt')
 const router = express.Router()
 const app = express()
 
+// Home
+app.get('/',(req,res) => {
+    res.send('Lets go my g')
+})
+
 // Register
 app.post('/reg', bodyParser.json(), (req, res) => {
     let bd = req.body;
