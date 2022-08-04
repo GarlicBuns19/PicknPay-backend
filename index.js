@@ -18,6 +18,7 @@ app.use(cors())
 // Home
 app.get('/',(req,res) => {
     res.sendFile('./index.html', {root : __dirname})
+    res.redirect('./homePage.html', {root: __dirname})
 })
 
 // Register
