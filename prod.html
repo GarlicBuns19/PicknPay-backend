@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products</title>
+</head>
+<body>
+    <h1>Products</h1>
+    <div id="prods">
+    </div>
+</body>
+</html>
+<script>
+    const prods = document.getElementById('prods')
+    async function data(){
+        await fetch('http://localhost:5001/prod')
+        .then(data => data.json())
+        .then(res => res.results.forEach(e => {
+            prods.innerHTML += `<p>${e.product_name}</p>
+            <img src="${e.product_image}" alt="">
+            <p>${e.product_price}</p>
+`
+        }))
+    }
+    data();
+</script>
