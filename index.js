@@ -118,7 +118,7 @@ app.get("/users/verify", (req, res) => {
 
 app.get('/prod', bodyParser.json(), (req, res) => {
     let bd = req.body
-    let sql = `SELECT * FROM products`
+    let sql = `SELECT * FROM products;`
     db.query(sql, (err, results) => {
         if (err) {
             console.log(err)
