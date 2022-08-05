@@ -11,7 +11,7 @@ const {
 } = require('body-parser')
 const router = express.Router();
 // Set up port
-const port = process.env.PORT || 5002
+const port = process.env.PORT || 5001
 
 app.use(router, express.json(), express.urlencoded({
     extended: true
