@@ -11,7 +11,7 @@ const {
 } = require('body-parser')
 const router = express.Router();
 // Set up port
-const port = process.env.PORT || 5001
+const PORT = process.env.PORT || 5001
 
 app.use(router, express.json(), express.urlencoded({
     extended: true
@@ -132,6 +132,6 @@ app.get('/prod', bodyParser.json(), (req, res) => {
 // const router = require(express.router())
 // app.use('/api')
 
-app.listen(port, () => {
-    console.log(`Sever is running http://localhost:${port}`)
+app.listen(PORT, () => {
+    console.log(`Sever is running http://localhost:${PORT}`)
 })
