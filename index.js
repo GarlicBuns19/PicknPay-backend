@@ -24,16 +24,16 @@ app.get('/', (req, res, next) => {
         root: __dirname
     })
 })
-app.get('/prods', (req, res, next) => {
-    res.sendFile('./prod.html', {
-        root: __dirname
-    })
-})
-app.get('/signup', (req, res, next) => {
-    res.sendFile('./login.html', {
-        root: __dirname
-    })
-})
+// app.get('/prods', (req, res, next) => {
+//     res.sendFile('./prod.html', {
+//         root: __dirname
+//     })
+// })
+// app.get('/signup', (req, res, next) => {
+//     res.sendFile('./login.html', {
+//         root: __dirname
+//     })
+// })
 
 // Register
 app.post('/reg', bodyParser.json(), async (req, res) => {
